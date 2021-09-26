@@ -13,14 +13,22 @@ def historical_data_query(market, start_date, end_date, resolution):
 
     Parameters
     ----------
-    market : 
-    start_date :
-    end_date :
-    resolution :
+    market : string
+    The ticker of the instrument listed on FTX, i.e. 'BTC-PERP'
+    
+    start_date : string
+    The start date for historical data query in 'YYYY-mm-dd' format, i.e. '2021-01-01'
+    
+    end_date : string
+    The end date for historical data query in 'YYYY-mm-dd' format, i.e. '2021-02-01'
+    
+    resolution : int
+    The timeframe between each datapoint queried in seconds, i.e. 3600
 
     Return
     ---------
-    df : DataFrame containing OHLC of instrument queried on FTX.
+    df : DataFrame
+    DataFrame containing OHLC of instrument queried on FTX.
     """
     end_date = pd.Timestamp(end_date).timestamp()
     start_date = pd.Timestamp(start_date).timestamp()
